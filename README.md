@@ -1,1 +1,1 @@
-# nextjs-pokedex
+Pokedex App build with Tailwind CSS and Framer Motion.
