@@ -60,10 +60,20 @@ export default function Home() {
         {/* {data && data.results.map((pokemon, index) => (
         <p key={index}>{pokemon.name}</p>
       ))} */}
+        <div className='flex gap-4 flex-wrap justify-center'>
       {pokemonDetails && pokemonDetails.map((pkm, index) => (
+        <div key={index} className='bg-indigo-700 py-1 px-12 rounded-md w-[250px]'>
+          <p className='text-gray-50 text-2xl font-bold capitalize'>{pkm.name}</p>    
+          <div className='flex gap-2'>
+            {pkm.types.map((type, index) => (
               <span key={index} className='px-2 py-1 drop-shadow rounded-lg' style={{ backgroundColor: typeToColorMapping[type.type.name] }} >
+                {type.type.name}
+              </span>
+            ))}
+          </div>
         </div>
       ))}
+      </div>
     </main>
   );
 }
