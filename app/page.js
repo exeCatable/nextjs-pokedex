@@ -1,6 +1,9 @@
 "use client"
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
+
+
 const typeToColorMapping = {
   normal: "#A8A878",
   fire: "#F08030",
@@ -64,6 +67,7 @@ export default function Home() {
       {pokemonDetails && pokemonDetails.map((pkm, index) => (
         <div key={index} className='bg-indigo-700 py-1 px-12 rounded-md w-[250px]'>
           <p className='text-gray-50 text-2xl font-bold capitalize'>{pkm.name}</p>    
+          <Image alt='' src={pkm.sprites.front_default} width={100} height={100} className="max-w-[100%]" />
           <div className='flex gap-2'>
             {pkm.types.map((type, index) => (
               <span key={index} className='px-2 py-1 drop-shadow rounded-lg' style={{ backgroundColor: typeToColorMapping[type.type.name] }} >
